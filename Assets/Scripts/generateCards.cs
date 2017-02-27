@@ -22,11 +22,13 @@ public class generateCards : MonoBehaviour {
             cards_data.Add(csv_reader.ReadLine().Split(','));
 
         this.UpdateAsObservable()
-            .Where(_ => Input.GetKeyDown(KeyCode.Space))
+            .Where(_ => Input.GetKeyDown(KeyCode.Return))
             .Subscribe(_ => {
                 var _card= GameObject.FindGameObjectWithTag("Card");
                 var _canvas = _card.transform.FindChild("Canvas").gameObject;
                 _canvas.GetComponentInChildren<Text>().text = printCard(Random.Range(1,cards_data.Count));
+
+                _card.GetComponent<AudioSource>().Play();
             });
     }
 

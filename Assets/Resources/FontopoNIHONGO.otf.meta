@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: da41df053e400f34c86a1da66a4e9a30
+timeCreated: 1488210497
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 20
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: FontopoNIHONGO
+  fontNames:
+  - FontopoNIHONGO
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
