@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Linq;
+using System.Text;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine.UI;
@@ -35,10 +36,13 @@ public class generateCards : MonoBehaviour {
     string printCard(int ar_index)
     {
         string _str = "";
+        int _length;
         foreach (var w in cards_data[ar_index])
         {
-            if (w.Length > 9) _str += "<size=2>" + w + "</size>" + "\r\n";
-            else if (w.Length > 7) _str += "<size=3>" + w + "</size>" + "\r\n";
+            _length = (w.Length == Encoding.GetEncoding("shift_jis").GetByteCount(w)) ? (int)(w.Length / 2) :w.Length;
+
+            if (_length > 9) _str += "<size=2>" + w + "</size>" + "\r\n";
+            else if (_length > 7) _str += "<size=3>" + w + "</size>" + "\r\n";
             else _str += w + "\r\n";
         }
         return _str;
